@@ -9,7 +9,7 @@ from itertools import product
 import seaborn as sns
 
 
-class Pybabs:
+class pykebabs:
 
     #Definition for possible alphabets [DNA/RNA, Amino acids]
     alphabets=['ACGT','ACGU','ACDEFGHIKLMNPQRSTVWY']
