@@ -1,7 +1,7 @@
 # __main__.py
 
 import sys
-import pyroKebabs as pk
+import pykebabs as pk
 
 def main():
     print("Welcome to pyroKebabs")

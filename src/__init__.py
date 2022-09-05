@@ -1,1 +1,1 @@
-from .pybabsclass import Pybabs
+from .pykebabsclass import pykebabs
