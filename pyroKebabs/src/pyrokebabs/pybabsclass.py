@@ -1,34 +1,12 @@
-from cProfile import label
-import time
-from unittest import case
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn import svm
-from Bio.Seq import Seq
-from sklearn.model_selection import train_test_split, cross_validate, GridSearchCV
-from sklearn.svm import SVC
-from sklearn.metrics import roc_curve, roc_auc_score
-from sklearn.metrics import average_precision_score
-from sklearn.metrics import precision_recall_curve, precision_score
-import numpy as np
+from sklearn.model_selection import GridSearchCV,GroupKFold,KFold
+from sklearn.svm import SVC,LinearSVC
 from scipy.sparse import csr_matrix
 from sklearn.metrics import accuracy_score
-import pandas as pd
-from itertools import combinations_with_replacement
-from itertools import permutations
 from itertools import product
-from sklearn.datasets import make_classification
-from sklearn.model_selection import KFold
-from sklearn.model_selection import GridSearchCV
-from numpy import std
-from numpy import mean
-from scipy.sparse import coo_matrix, vstack
 import seaborn as sns
-from collections import deque
-from sklearn.svm import LinearSVC
-from sklearn.model_selection import GroupKFold
-
 
 
 class Pybabs:
@@ -275,8 +253,8 @@ class Pybabs:
                 if verbose >= 2:
                     print('>acc=%.3f, est=%.3f, cfg=%s' % (acc, result.best_score_, result.best_params_))
             if verbose >= 1:    
-                print('Accuracy: %.3f (%.3f)' % (mean(outer_results), std(outer_results)))  
-            return best_model,mean(outer_results),k,g
+                print('Accuracy: %.3f (%.3f)' % (np.mean(outer_results), np.std(outer_results)))  
+            return best_model,np.mean(outer_results),k,g
 
 
 
@@ -308,8 +286,8 @@ class Pybabs:
                 print('Kernel for k=' + str(i) + ' and g=' + str(j) + ' built')
             model = self.unbcv(i,j,outercv,innercv,verbose,C,svmc,sparse,gram,norm)
             if model[1] > best_acc:
-                print("Accuracy new best model:" , mean(model[1]))
-                best_acc = mean(model[1])
+                print("Accuracy new best model:" , np.mean(model[1]))
+                best_acc = np.mean(model[1])
                 best_model = model[0]
             else:
                 print("Modell has worse key figures")
@@ -420,8 +398,8 @@ class Pybabs:
             if verbose >= 2:
                     print('>acc=%.3f, est=%.3f, cfg=%s' % (acc, result.best_score_, result.best_params_))
         if verbose >= 1:    
-            print('Accuracy: %.3f (%.3f)' % (mean(outer_results), std(outer_results)))  
-        return best_model,mean(outer_results)
+            print('Accuracy: %.3f (%.3f)' % (np.mean(outer_results), np.std(outer_results)))  
+        return best_model,np.mean(outer_results)
 
 
 
