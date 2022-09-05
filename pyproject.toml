@@ -5,8 +5,8 @@ requires = ["setuptools>=61.0.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "pyroKebabs"
-version = "1.0.0"
+name = "pyKeBABS"
+version = "1.0.1"
 description = "Easy to use String Kernels for SVM"
 readme = "README.md"
 authors = [{ name = "florian-wagner", email = "mindbrix@gmx.at" }]
@@ -23,7 +23,7 @@ dependencies = [
     "sklearn",
     "scipy",
     "seaborn",
-    "Bio",
+    "Bio"
 ]
 requires-python = ">=3.8"
 
