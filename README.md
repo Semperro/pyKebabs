@@ -1,5 +1,4 @@
-# pybabs
-Machine Learning algorithms already support our daily life in many areas of application.
+# PyKeBABSMachine Learning algorithms already support our daily life in many areas of application.
 Be it self-driving cars, intelligent robots, or the field of computational biology. Identi-
 fying specific features from biological sequences is essential in understanding the world
 surrounding us and its complex connections. Forensics, the development of new drugs,
